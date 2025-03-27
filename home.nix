@@ -32,6 +32,19 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      aws.disabled = true;
+      gcloud.disabled = true;
+      line_break.disabled = true;
+      command_timeout = 1300;
+      scan_timeout = 50;
+      format = "$all$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status\n$username$hostname$directory";
+    };
+  };
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
