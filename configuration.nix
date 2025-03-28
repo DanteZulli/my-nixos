@@ -73,7 +73,6 @@
     variant = "";
   };
 
-
   # Virtualisation & Containers
   virtualisation = {
     docker.enable = true;
@@ -93,37 +92,12 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm"];
   };
 
-  # -------------------------------
-  # ---- PROGRAMS AND PACKAGES ----
-  # -------------------------------
+  # Programs & Packages (System Wide)
 
   # To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (discord.override {
-      withVencord = true;
-    })
-    prusa-slicer
-    fastfetch
-    protonup-qt
-    bitwarden-desktop
-    ferdium
-    mangohud
-    goverlay
-    (heroic.override {
-      extraPkgs = pkgs: [
-        pkgs.gamescope
-	pkgs.gamemode
-      ];
-    })
-    cartridges
-    git
-    vscode
-    warp-terminal
-    wget
-    thunderbird
     quickemu
-    vlc
   ];
 
   # Steam & GameMode

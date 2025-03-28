@@ -6,7 +6,31 @@
   home.homeDirectory = "/home/dante";
 
   home.packages = with pkgs; [
-    # Si quisiera algun paquete solo para mi usuario, podria ponerlo aca.
+    fortune
+    (discord.override {
+      withVencord = true;
+    })
+    prusa-slicer
+    fastfetch
+    protonup-qt
+    bitwarden-desktop
+    ferdium
+    mangohud
+    goverlay
+    (heroic.override {
+      extraPkgs = pkgs: [
+        pkgs.gamescope
+	    pkgs.gamemode
+      ];
+    })
+    cartridges
+    git
+    vscode
+    warp-terminal
+    wget
+    thunderbird
+    quickemu
+    vlc
   ];
 
   programs.git = {
@@ -43,6 +67,15 @@
       scan_timeout = 50;
       format = "$all$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status\n$username$hostname$directory";
     };
+  };
+
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    initExtra = ''
+      eval "$(starship init bash)"
+      fortune
+    '';
   };
 
   # This value determines the home Manager release that your
