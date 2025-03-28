@@ -1,24 +1,24 @@
 # NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Nix
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader & Kernel (Boot)
   boot.loader.systemd-boot = {
     enable = true;
     configurationLimit = 5;
-  };  
+  };
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;  
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Networking
   networking.hostName = "nixos-chata";
@@ -89,7 +89,7 @@
   users.users.dante = {
     isNormalUser = true;
     description = "Dante Zulli";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm"];
+    extraGroups = ["networkmanager" "wheel" "docker" "libvirtd" "kvm"];
   };
 
   # Programs & Packages (System Wide)
@@ -107,7 +107,6 @@
   };
   programs.gamemode.enable = true;
 
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -115,5 +114,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
