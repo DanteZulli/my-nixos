@@ -32,6 +32,7 @@
     thunderbird
     vlc
     alejandra
+    pokemon-colorscripts-mac
   ];
 
   programs.git = {
@@ -79,60 +80,65 @@
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
-      # Nord Theme: https://github.com/nordtheme/alacritty/blob/main/src/nord.yaml
+      window = {
+        dimensions = {
+          columns = 120;
+          lines = 40;
+        };
+      };
+      # Arc Dark Theme: https://gist.github.com/BobbyWibowo/8392af0c1bb3131c6e09b9395968b649
       colors = {
         primary = {
-          background = "#2e3440";
-          foreground = "#d8dee9";
-          dim_foreground = "#a5abb6";
+          background = "#383c4a";
+          foreground = "#d3dae3";
         };
         cursor = {
-          text = "#2e3440";
-          cursor = "#d8dee9";
+          text = "#383c4a";
+          cursor = "#d3dae3";
         };
         vi_mode_cursor = {
-          text = "#2e3440";
-          cursor = "#d8dee9";
+          text = "#383c4a";
+          cursor = "#d3dae3";
         };
         selection = {
           text = "CellForeground";
-          background = "#4c566a";
+          background = "#616981";
         };
         search = {
           matches = {
             foreground = "CellBackground";
-            background = "#88c0d0";
+            background = "#5294e2";
           };
         };
         normal = {
-          black = "#3b4252";
-          red = "#bf616a";
-          green = "#a3be8c";
-          yellow = "#ebcb8b";
-          blue = "#81a1c1";
-          magenta = "#b48ead";
-          cyan = "#88c0d0";
-          white = "#e5e9f0";
+          black = "#4b5164";
+          red = "#e14245";
+          green = "#5ca75b";
+          yellow = "#f6ab32";
+          blue = "#4877b1";
+          magenta = "#a660c3";
+          cyan = "#5294e2";
+          white = "#a9a9aa";
         };
         bright = {
-          black = "#4c566a";
-          red = "#bf616a";
-          green = "#a3be8c";
-          yellow = "#ebcb8b";
-          blue = "#81a1c1";
-          magenta = "#b48ead";
-          cyan = "#8fbcbb";
-          white = "#eceff4";
+          black = "#616981";
+          red = "#e16f7e";
+          green = "#add488";
+          yellow = "#fdc35f";
+          blue = "#8ca9bf";
+          magenta = "#e2afec";
+          cyan = "#73c5e2";
+          white = "#fcfcfc";
         };
         dim = {
-          black = "#373e4d";
-          red = "#94545d";
-          green = "#809575";
-          yellow = "#b29e75";
-          blue = "#68809a";
-          magenta = "#8c738c";
-          cyan = "#6d96a5";
-          white = "#aeb3bb";
+          black = "#2c2f3a";
+          red = "#783228";
+          green = "#4b7c16";
+          yellow = "#b65619";
+          blue = "#2b486b";
+          magenta = "#614a73";
+          cyan = "#1b668f";
+          white = "#63686d";
         };
       };
     };
@@ -143,6 +149,7 @@
     enableCompletion = true;
     initExtra = ''
       eval "$(starship init bash)"
+      pokemon-colorscripts -r
       fortune
     '';
   };
