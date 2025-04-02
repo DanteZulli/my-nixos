@@ -35,6 +35,7 @@
     libreoffice-qt
     localsend
     kdePackages.kolourpaint
+    thunderbird
   ];
 
   programs.git = {
