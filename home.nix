@@ -33,6 +33,9 @@
     vlc
     alejandra
     pokemon-colorscripts-mac
+    libreoffice-qt
+    localsend
+    kdePackages.kolourpaint
   ];
 
   programs.git = {
