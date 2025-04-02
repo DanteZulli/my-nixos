@@ -29,13 +29,13 @@
     vscode
     warp-terminal
     wget
-    thunderbird
     vlc
     alejandra
     pokemon-colorscripts-mac
     libreoffice-qt
     localsend
     kdePackages.kolourpaint
+    kdePackages.kmail
   ];
 
   programs.git = {
