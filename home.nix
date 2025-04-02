@@ -35,7 +35,6 @@
     libreoffice-qt
     localsend
     kdePackages.kolourpaint
-    kdePackages.kmail
   ];
 
   programs.git = {
