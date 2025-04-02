@@ -44,12 +44,15 @@
     enable = true;
     enable32Bit = true;
   };
-  services.displayManager.sddm = {
+  services.xserver = {
     enable = true;
-    wayland.enable = true;
+    videoDrivers = ["amdgpu"];
+  };
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "plasmax11";
   };
   services.desktopManager.plasma6.enable = true;
-  services.xserver.videoDrivers = ["amdgpu"];
 
   # Sound
   hardware.pulseaudio.enable = false;
